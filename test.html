@@ -1,46 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Open Square</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: sans-serif;
-      background: #f0f0f0;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .square {
-      width: 200px;
-      height: 200px;
-      background: #4CAF50;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 24px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <button id="openSquare">Open Square in New Window</button>
-
-  <script>
-    document.getElementById("openSquare").addEventListener("click", function() {
-      // Open a new window with the square page
-      const newWin = window.open("", "_blank", "width=400,height=400");
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <title>Square</title>
-          <style>
+<script>
+  document.getElementById("openSquare").addEventListener("click", function() {
+    const newWin = window.open("", "_blank", "width=400,height=400");
+    newWin.document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Square</title>
+        <style>
+          body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            color: white;
+            font-family: sans-serif;
+          }
+          .square {
+            width: 200px;
+            height: 200px;
+            background: #4CAF50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="square">SQUARE</div>
+      </body>
+      </html>
+    `);
+    newWin.document.close();
+  });
+</script>
