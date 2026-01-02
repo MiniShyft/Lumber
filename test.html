@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Open Square</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+      background: #f0f0f0;
+    }
+    .square {
+      width: 200px;
+      height: 200px;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button id="openSquare">Open Square Tab</button>
+  </div>
+
+  <script>
+    document.getElementById("openSquare").addEventListener("click", function() {
+      // Create the new window
+      const newWin = window.open("", "_blank", "width=400,height=400");
+
+      // Write the "square page" HTML into the new window
+      newWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Square</title>
+          <style>
+            body {
+              margin: 0;
+              height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: #222;
+              color: white;
+              font-family: sans-serif;
+            }
+            .square {
+              width: 200px;
+              height: 200px;
+              background: #4CAF50;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 24px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="square">SQUARE</div>
+        </body>
+        </html>
+      `);
+
+      newWin.document.close(); // Finish writing
+    });
+  </script>
+</body>
+</html>
